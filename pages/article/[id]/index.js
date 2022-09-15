@@ -1,9 +1,8 @@
-import React from "react";
-import { useRouter } from "next/router";
+
 import Link from "next/link";
 
-function article({ article }) {
-  const { id } = useRouter().query;
+const article = ({ article }) => {
+  
   return (
     <>
       <h1>{article.title}</h1>
@@ -12,7 +11,7 @@ function article({ article }) {
       <Link href="/">Go back</Link>
     </>
   );
-}
+};
 
 export const getStaticProps = async (context) => {
   const res = await fetch(
